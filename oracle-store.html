@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Store - Ramadhan Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #FFD700, #028A0F); /* Gradasi emas-hijau */
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, #FFD700, #026206); /* Header gradasi emas ke hijau */
+            position: relative;
+            box-shadow: 0 5px 15px rgba(255, 223, 0, 0.5);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 45px;
+            text-shadow: 2px 2px 5px #000;
+        }
+       .container h2 {
+    color: black;
+}
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .announcement {
+            text-align: center;
+            background: linear-gradient(to right, #FFD700, #E6B800);
+            color: #056608;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 0 20px rgba(255, 223, 0, 0.8);
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FFD700;
+            display: inline-block;
+            padding-bottom: 5px;
+            color: #FFD700;
+        }
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filter-buttons button {
+            background: #034C03; /* Kontras dengan nuansa utama */
+            border: none;
+            color: #FFD700;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .filter-buttons button:hover {
+            background: #025902;
+        }
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: linear-gradient(to bottom, rgba(255, 215, 0, 0.2), rgba(2, 90, 2, 0.4));
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 10px rgba(255, 223, 0, 0.3);
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px gold;
+        }
+        .card h3 {
+            color: #FFD700;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta a {
+            display: inline-block;
+            background: #034C03;
+            color: #FFD700;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        .cta a:hover {
+            background: #025902;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+        }
+        .whatsapp-widget {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .whatsapp-widget a {
+            display: inline-block;
+            background: #25D366; /* Tetap kontras */
+            color: white;
+            font-weight: bold;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 50px;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+            transition: 0.3s;
+        }
+        .whatsapp-widget a:hover {
+            background: #1EBE57;
+            box-shadow: 0 0 25px rgba(37, 211, 102, 1);
+            transform: scale(1.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, #025902, #034C03);
+            font-size: 14px;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://i.ibb.co.com/ccYkwvWH/20250226-122349-removebg-preview-1-1-1.png" alt="Logo Oracle Store" width="240">
+    <h1>Oracle Store - Ramadhan Edition</h1>
+    <p>Menyediakan Kebutuhan Server & Aplikasi Premium</p>
+</header>
+
+<div class="announcement">
+    🌠 Selamat Menjalankan Ibadah Puasa! Diskon Spesial hingga mulai dari pukul 17:00 - 20:00 WIB 🌠
+</div>
+
+<div class="container">
+    <h2>Pilih Kategori</h2>
+    <div class="filter-buttons">
+        <button onclick="filterCategory('all')">Semua</button>
+        <button onclick="filterCategory('minecraft')">Minecraft</button>
+        <button onclick="filterCategory('akun')">Akun</button>
+        <button onclick="filterCategory('aplikasi')">Aplikasi Premium</button>
+    </div>
+
+    <section id="products" class="section">
+        <div class="card minecraft"><h3>Minecraft Models</h3><p>Model kustom untuk server.</p></div>
+        <div class="section">  
+            <!-- Minecraft Service -->  
+            <div class="card minecraft"><h3>Minecraft Models</h3><p>Model kustom untuk server.</p></div>  
+            <div class="card minecraft"><h3>Configurasi</h3><p>Pengaturan optimal server.</p></div>  
+            <div class="card minecraft"><h3>Setups Server</h3><p>Pemasangan server lengkap.</p></div>  
+            <div class="card minecraft"><h3>Backup Server</h3><p>Backup data server.</p></div>  
+            <div class="card minecraft"><h3>Jasa Fix Plugin</h3><p>Perbaikan plugin error.</p></div>  
+            <div class="card minecraft"><h3>Jasa Build</h3><p>Pembuatan map dan struktur.</p></div>  
+  
+            <!-- Akun Minecraft -->  
+            <div class="card akun"><h3>Akun Java</h3><p>Akun Minecraft Java unbanned/banned.</p></div>  
+            <div class="card akun"><h3>Akun Bedrock</h3><p>Akun Minecraft Bedrock (private/sharing).</p></div>  
+            <div class="card akun"><h3>Pojav Launcher</h3><p>Akun untuk Minecraft di HP.</p></div>  
+  
+            <!-- Aplikasi Premium -->  
+            <div class="card aplikasi"><h3>Canva Premium</h3><p>1 tahun / 3 bulan akses Canva Pro.</p></div>  
+            <div class="card aplikasi"><h3>CapCut Premium</h3><p>Unlock fitur CapCut Premium.</p></div>  
+            <div class="card aplikasi"><h3>Netflix Premium</h3><p>Akses film & serial Netflix.</p></div>  
+            <div class="card aplikasi"><h3>Vidio Premium</h3><p>Akses streaming eksklusif.</p></div>  
+            <div class="card aplikasi"><h3>Spotify Premium</h3><p>Mendengarkan lagu tanpa batas.</p></div>  
+            <div class="card aplikasi"><h3>VIU Premium</h3><p>Akses film Asia terbaik.</p></div>  
+        </div>  
+    </div>
+    </section>
+
+    <div class="cta">
+        <h2>Ingin Order?</h2>
+        <p>Silakan chat admin di bawah ini:</p>
+        <a href="https://wa.me/6283820065296" target="_blank">Chat Admin</a>
+    </div>
+
+    <div class="whatsapp-widget">
+        <a href="https://chat.whatsapp.com/GMaOQdE5omh3J0OtTiIv9D" target="_blank">
+            📢 Bergabung ke Grup WhatsApp
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>© Oracle Store 2023-2025 | Ramadhan Kareem 🌙</p>
+</footer>
+
+<script>
+    function filterCategory(category) {
+        let cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.style.display = (category === 'all' || card.classList.contains(category)) ? "block" : "none";
+        });
+    }
+</script>
+
+</body>
+</html>
