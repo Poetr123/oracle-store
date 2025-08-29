@@ -1,222 +1,262 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oracle Store - Ramadhan Edition</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oracle Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
     <style>
+        /* Warna tema ungu gradasi gelap ala aurora */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #FFD700, #028A0F); /* Gradasi emas-hijau */
-            color: white;
+            background: linear-gradient(135deg, #1a0033, #3a0066, #6a00a1, #3a0066, #1a0033);
+            color: #e0d7f5;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         header {
             text-align: center;
             padding: 50px 20px;
-            background: linear-gradient(to bottom, #FFD700, #026206); /* Header gradasi emas ke hijau */
+            background: linear-gradient(180deg, #4b0082, #2e0050);
             position: relative;
-            box-shadow: 0 5px 15px rgba(255, 223, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(107, 0, 255, 0.7);
+        }
+        header img {
+            max-width: 180px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 5px #9b59b6);
         }
         header h1 {
             margin: 0;
-            font-size: 45px;
-            text-shadow: 2px 2px 5px #000;
+            font-size: 48px;
+            color: #d8b9ff;
+            text-shadow: 0 0 10px #9b59b6;
         }
-       .container h2 {
-    color: black;
-}
         header p {
             margin-top: 10px;
-            font-size: 18px;
+            font-size: 20px;
+            color: #c9b3ff;
+            text-shadow: 0 0 5px #6a00a1;
         }
         .announcement {
-            text-align: center;
-            background: linear-gradient(to right, #FFD700, #E6B800);
-            color: #056608;
-            padding: 15px;
-            font-weight: bold;
-            font-size: 18px;
-            box-shadow: 0 0 20px rgba(255, 223, 0, 0.8);
+            display: none; /* Menghilangkan pengumuman Ramadhan */
         }
         .container {
             max-width: 1100px;
-            margin: auto;
-            padding: 20px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
         }
         h2 {
             text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #FFD700;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #9b59b6;
             display: inline-block;
-            padding-bottom: 5px;
-            color: #FFD700;
+            padding-bottom: 8px;
+            color: #d8b9ff;
+            text-shadow: 0 0 8px #9b59b6;
         }
         .filter-buttons {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .filter-buttons button {
-            background: #034C03; /* Kontras dengan nuansa utama */
-            border: none;
-            color: #FFD700;
-            padding: 10px 20px;
-            margin: 5px;
+            background: #3a0066;
+            border: 2px solid #9b59b6;
+            color: #d8b9ff;
+            padding: 12px 25px;
+            margin: 6px;
             cursor: pointer;
             font-size: 16px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+            box-shadow: 0 0 8px #6a00a1;
         }
-        .filter-buttons button:hover {
-            background: #025902;
+        .filter-buttons button:hover,
+        .filter-buttons button:focus {
+            background: #9b59b6;
+            color: #1a0033;
+            box-shadow: 0 0 15px #d8b9ff;
+            outline: none;
         }
         .section {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
         }
         .card {
-            background: linear-gradient(to bottom, rgba(255, 215, 0, 0.2), rgba(2, 90, 2, 0.4));
-            padding: 20px;
-            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(107, 0, 255, 0.15), rgba(58, 0, 102, 0.4));
+            padding: 25px 20px;
+            border-radius: 15px;
             width: 300px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid #FFD700;
-            box-shadow: 0 0 10px rgba(255, 223, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #9b59b6;
+            box-shadow: 0 0 12px rgba(155, 89, 182, 0.5);
+            color: #d8b9ff;
         }
         .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px gold;
+            transform: scale(1.07);
+            box-shadow: 0 0 25px #d8b9ff, 0 0 40px #9b59b6;
+            cursor: pointer;
         }
         .card h3 {
-            color: #FFD700;
+            color: #d8b9ff;
+            margin-bottom: 12px;
+            text-shadow: 0 0 8px #9b59b6;
+        }
+        .card p {
+            font-size: 15px;
+            color: #c9b3ff;
+            text-shadow: 0 0 5px #6a00a1;
         }
         .cta {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
+        }
+        .cta h2 {
+            color: #d8b9ff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #9b59b6;
+        }
+        .cta p {
+            color: #c9b3ff;
+            margin-bottom: 20px;
+            font-size: 18px;
+            text-shadow: 0 0 5px #6a00a1;
         }
         .cta a {
             display: inline-block;
-            background: #034C03;
-            color: #FFD700;
-            padding: 15px 25px;
+            background: #6a00a1;
+            color: #e0d7f5;
+            padding: 16px 35px;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            font-weight: 700;
+            border-radius: 40px;
+            font-size: 18px;
+            box-shadow: 0 0 20px #9b59b6;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
-        .cta a:hover {
-            background: #025902;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+        .cta a:hover,
+        .cta a:focus {
+            background: #9b59b6;
+            box-shadow: 0 0 30px #d8b9ff;
+            outline: none;
         }
         .whatsapp-widget {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
         }
         .whatsapp-widget a {
             display: inline-block;
-            background: #25D366; /* Tetap kontras */
+            background: #25D366;
             color: white;
-            font-weight: bold;
-            padding: 15px 30px;
+            font-weight: 700;
+            padding: 16px 40px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             border-radius: 50px;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
-            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
         }
-        .whatsapp-widget a:hover {
+        .whatsapp-widget a:hover,
+        .whatsapp-widget a:focus {
             background: #1EBE57;
-            box-shadow: 0 0 25px rgba(37, 211, 102, 1);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 1);
             transform: scale(1.1);
+            outline: none;
         }
         footer {
             text-align: center;
             padding: 20px;
-            background: linear-gradient(to bottom, #025902, #034C03);
+            background: linear-gradient(180deg, #2e0050, #4b0082);
             font-size: 14px;
-            color: #ddd;
+            color: #bfb3e6;
+            box-shadow: 0 -5px 15px rgba(107, 0, 255, 0.7);
+        }
+        /* Responsive */
+        @media (max-width: 650px) {
+            .card {
+                width: 90%;
+            }
+            header h1 {
+                font-size: 36px;
+            }
+            .filter-buttons button {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://i.ibb.co.com/ccYkwvWH/20250226-122349-removebg-preview-1-1-1.png" alt="Logo Oracle Store" width="240">
-    <h1>Oracle Store - Ramadhan Edition</h1>
+    <img src="https://i.ibb.co/ccYkwvWH/20250226-122349-removebg-preview-1-1-1.png" alt="Logo Oracle Store" />
+    <h1>Oracle Store</h1>
     <p>Menyediakan Kebutuhan Server & Aplikasi Premium</p>
 </header>
 
-<div class="announcement">
-    🌠 Selamat Menjalankan Ibadah Puasa! Diskon Spesial hingga mulai dari pukul 17:00 - 19:00 WIB 🌠
-</div>
-
 <div class="container">
     <h2>Pilih Kategori</h2>
-    <div class="filter-buttons">
-        <button onclick="filterCategory('all')">Semua</button>
-        <button onclick="filterCategory('minecraft')">Minecraft</button>
-        <button onclick="filterCategory('akun')">Akun</button>
-        <button onclick="filterCategory('aplikasi')">Aplikasi Premium</button>
+    <div class="filter-buttons" role="group" aria-label="Filter kategori produk">
+        <button onclick="filterCategory('all')" aria-pressed="true">Semua</button>
+        <button onclick="filterCategory('minecraft')" aria-pressed="false">Minecraft</button>
+        <button onclick="filterCategory('akun')" aria-pressed="false">Akun</button>
+        <button onclick="filterCategory('aplikasi')" aria-pressed="false">Aplikasi Premium</button>
     </div>
 
-    <section id="products" class="section">
+    <section id="products" class="section" aria-live="polite">
         <div class="card minecraft"><h3>Minecraft Models</h3><p>Model kustom untuk server.</p></div>
-        <div class="section">  
-            <!-- Minecraft Service -->  
-            <div class="card minecraft"><h3>Minecraft Models</h3><p>Model kustom untuk server.</p></div>  
-            <div class="card minecraft"><h3>Configurasi</h3><p>Pengaturan optimal server.</p></div>  
-            <div class="card minecraft"><h3>Setups Server</h3><p>Pemasangan server lengkap.</p></div>  
-            <div class="card minecraft"><h3>Backup Server</h3><p>Backup data server.</p></div>  
-            <div class="card minecraft"><h3>Jasa Fix Plugin</h3><p>Perbaikan plugin error.</p></div>  
-            <div class="card minecraft"><h3>Jasa Build</h3><p>Pembuatan map dan struktur.</p></div>  
-  
-            <!-- Akun Minecraft -->  
-            <div class="card akun"><h3>Akun Java</h3><p>Akun Minecraft Java unbanned/banned.</p></div>  
-            <div class="card akun"><h3>Akun Bedrock</h3><p>Akun Minecraft Bedrock (private/sharing).</p></div>  
-            <div class="card akun"><h3>Pojav Launcher</h3><p>Akun untuk Minecraft di HP.</p></div>  
-  
-            <!-- Aplikasi Premium -->  
-            <div class="card aplikasi"><h3>Canva Premium</h3><p>1 tahun / 3 bulan akses Canva Pro.</p></div>  
-            <div class="card aplikasi"><h3>CapCut Premium</h3><p>Unlock fitur CapCut Premium.</p></div>  
-            <div class="card aplikasi"><h3>Netflix Premium</h3><p>Akses film & serial Netflix.</p></div>  
-            <div class="card aplikasi"><h3>Vidio Premium</h3><p>Akses streaming eksklusif.</p></div>  
-            <div class="card aplikasi"><h3>Spotify Premium</h3><p>Mendengarkan lagu tanpa batas.</p></div>  
-            <div class="card aplikasi"><h3>VIU Premium</h3><p>Akses film Asia terbaik.</p></div>  
-        </div>  
-    </div>
+        <div class="card minecraft"><h3>Configurasi</h3><p>Pengaturan optimal server.</p></div>
+        <div class="card minecraft"><h3>Setups Server</h3><p>Pemasangan server lengkap.</p></div>
+        <div class="card minecraft"><h3>Backup Server</h3><p>Backup data server.</p></div>
+        <div class="card minecraft"><h3>Jasa Fix Plugin</h3><p>Perbaikan plugin error.</p></div>
+        <div class="card minecraft"><h3>Jasa Build</h3><p>Pembuatan map dan struktur.</p></div>
+
+        <div class="card akun"><h3>Akun Java</h3><p>Akun Minecraft Java unbanned/banned.</p></div>
+        <div class="card akun"><h3>Akun Bedrock</h3><p>Akun Minecraft Bedrock (private/sharing).</p></div>
+        <div class="card akun"><h3>Pojav Launcher</h3><p>Akun untuk Minecraft di HP.</p></div>
+
+        <div class="card aplikasi"><h3>Canva Premium</h3><p>1 tahun / 3 bulan akses Canva Pro.</p></div>
+        <div class="card aplikasi"><h3>CapCut Premium</h3><p>Unlock fitur CapCut Premium.</p></div>
+        <div class="card aplikasi"><h3>Netflix Premium</h3><p>Akses film & serial Netflix.</p></div>
+        <div class="card aplikasi"><h3>Vidio Premium</h3><p>Akses streaming eksklusif.</p></div>
+        <div class="card aplikasi"><h3>Spotify Premium</h3><p>Mendengarkan lagu tanpa batas.</p></div>
+        <div class="card aplikasi"><h3>VIU Premium</h3><p>Akses film Asia terbaik.</p></div>
     </section>
 
     <div class="cta">
         <h2>Ingin Order?</h2>
         <p>Silakan chat admin di bawah ini:</p>
-        <a href="https://wa.me/6283820065296" target="_blank">Chat Admin</a>
+        <a href="https://wa.me/6283820065296" target="_blank" rel="noopener noreferrer">Chat Admin</a>
     </div>
 
     <div class="whatsapp-widget">
-        <a href="https://chat.whatsapp.com/GMaOQdE5omh3J0OtTiIv9D" target="_blank">
+        <a href="https://chat.whatsapp.com/GMaOQdE5omh3J0OtTiIv9D" target="_blank" rel="noopener noreferrer">
             📢 Bergabung ke Grup WhatsApp
         </a>
     </div>
 </div>
 
 <footer>
-    <p>© Oracle Store 2023-2025 | Ramadhan Kareem 🌙</p>
+    <p>© Oracle Store 2023-2025</p>
 </footer>
 
 <script>
     function filterCategory(category) {
-        let cards = document.querySelectorAll('.card');
+        const cards = document.querySelectorAll('.card');
+        const buttons = document.querySelectorAll('.filter-buttons button');
         cards.forEach(card => {
             card.style.display = (category === 'all' || card.classList.contains(category)) ? "block" : "none";
+        });
+        // Update aria-pressed for accessibility
+        buttons.forEach(button => {
+            button.setAttribute('aria-pressed', button.textContent.toLowerCase() === category || (category === 'all' && button.textContent.toLowerCase() === 'semua'));
         });
     }
 </script>
